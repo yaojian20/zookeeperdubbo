@@ -9,7 +9,12 @@ import com.yao.common.service.Userservice;
  *
  * @author
  */
-@Service()
+
+/**
+ * 不配置protocol的话默认使用dubbo协议，
+ * 使用hessian的话还要配置实例化 hessian的ProtocolConfig
+ */
+@Service(protocol =  {"hessian"})
 //服务提供方跟消费方需要引用同一个接口包（实现同一个接口）
 public class UserserviceImpl implements Userservice {
     @Override

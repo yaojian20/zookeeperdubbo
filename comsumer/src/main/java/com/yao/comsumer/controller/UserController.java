@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @Reference()
+    @Reference(async = true)
     private Userservice userservice;
 
     @RequestMapping("/user")
