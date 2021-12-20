@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @Reference(async = true)
+    @Reference(check = false,parameters = { "protocol", "hessian" })
     private Userservice userservice;
 
     @RequestMapping("/user")
