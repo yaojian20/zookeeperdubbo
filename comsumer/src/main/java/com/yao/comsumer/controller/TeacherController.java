@@ -2,6 +2,7 @@ package com.yao.comsumer.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.rpc.RpcContext;
+import com.alibaba.dubbo.rpc.protocol.AbstractInvoker;
 import com.yao.common.entity.Student;
 import com.yao.common.entity.Teacher;
 import com.yao.common.service.StudentService;
