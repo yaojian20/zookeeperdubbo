@@ -10,4 +10,6 @@ import com.yao.common.entity.User;
 public interface Userservice {
 
     User getUserByName(String name);
+
+    void createUser(String name,Integer age);
 }

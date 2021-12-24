@@ -24,4 +24,9 @@ public class UserserviceImpl implements Userservice {
         user.setAge(25);
         return user;
     }
+
+    @Override
+    public void createUser(String name, Integer age) {
+
+    }
 }

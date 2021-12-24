@@ -4,6 +4,7 @@ import com.yao.common.entity.User;
 import com.yao.common.service.Userservice;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,6 +22,11 @@ public class UserController {
     public User getUserByName(String name){
         User user = userservice.getUserByName(name);
         return user;
+    }
+
+    @RequestMapping("/createUser")
+    public void create(@RequestParam("name") String name, @RequestParam("age")Integer age){
+        userservice.createUser(name,age);
     }
 
 }
