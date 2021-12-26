@@ -112,6 +112,11 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId><!--包含spring-boot-starter-web-->
         </dependency>
         <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.2.3</version>
@@ -119,7 +124,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.38</version>
+            <version>8.0.25</version>
         </dependency>
 
 <!--        https://blog.csdn.net/wdquan19851029/article/details/111990912-->
