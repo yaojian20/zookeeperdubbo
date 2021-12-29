@@ -12,4 +12,8 @@ public interface Userservice {
     User getUserByName(String name);
 
     void createUser(String name,Integer age);
+
+    User getUserById(String userId);
+
+    void updateUser(User user);
 }

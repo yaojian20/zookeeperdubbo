@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * @author
  */
 @Entity
-@Table(name = "order")
+@Table(name = "good_order")
 public class Order extends BaseEntity implements Serializable {
 
     @Id
@@ -70,5 +70,15 @@ public class Order extends BaseEntity implements Serializable {
         if (StringUtils.isEmpty(orderId)) {
             orderId = String.valueOf(snowflakeIdWorker.nextId());
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId='" + orderId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", totalMoney=" + totalMoney +
+                ", goodsName='" + goodsName + '\'' +
+                '}';
     }
 }

@@ -37,4 +37,14 @@ public class UserServiceImpl implements Userservice {
         user.setTotalMoney(new BigDecimal("100000"));
         userRepository.save(user);
     }
+
+    @Override
+    public User getUserById(String userId) {
+        return userRepository.findById(userId).get();
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userRepository.save(user);
+    }
 }

@@ -3,6 +3,7 @@ package com.yao.common.util;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.util.Assert;
  *
  * @author
  */
+@Component
 public class SpringContextUtils implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
@@ -18,8 +20,10 @@ public class SpringContextUtils implements ApplicationContextAware {
      * 实现ApplicationContextAware接口的context注入函数, 将其存入静态变量.
      */
 
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext)
             throws BeansException {
+        System.out.println("===================正在初始化applicationContext========================");
         SpringContextUtils.applicationContext = applicationContext;
     }
 

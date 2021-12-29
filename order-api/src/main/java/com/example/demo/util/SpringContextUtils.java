@@ -1,16 +1,22 @@
 package com.example.demo.util;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Created by yaojian on 2021/12/24 16:17
  *
  * @author
  */
-public class SpringContextUtils implements ApplicationContextAware {
+@Component
+public class SpringContextUtils implements ApplicationContextAware{
 
     private static ApplicationContext applicationContext;
 
@@ -18,8 +24,10 @@ public class SpringContextUtils implements ApplicationContextAware {
      * 实现ApplicationContextAware接口的context注入函数, 将其存入静态变量.
      */
 
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext)
             throws BeansException {
+        System.out.println("正在初始化applicationContext!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         SpringContextUtils.applicationContext = applicationContext;
     }
 
@@ -69,4 +77,5 @@ public class SpringContextUtils implements ApplicationContextAware {
     public static String getActiveProfile() {
         return applicationContext.getEnvironment().getActiveProfiles()[0];
     }
+
 }

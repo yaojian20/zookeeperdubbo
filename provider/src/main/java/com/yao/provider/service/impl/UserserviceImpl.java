@@ -29,4 +29,14 @@ public class UserserviceImpl implements Userservice {
     public void createUser(String name, Integer age) {
 
     }
+
+    @Override
+    public User getUserById(String userId) {
+        return null;
+    }
+
+    @Override
+    public void updateUser(User user) {
+
+    }
 }
