@@ -5,6 +5,7 @@ import com.yao.common.service.Userservice;
 import com.yao.user.repository.UserRepository;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
@@ -14,6 +15,8 @@ import java.math.BigDecimal;
  * @author
  */
 @DubboService(version = "1.1",group = "user-center")
+//分布式事务
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements Userservice {
 
     @Autowired

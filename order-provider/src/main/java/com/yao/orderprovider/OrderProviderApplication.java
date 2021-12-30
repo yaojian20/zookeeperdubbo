@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "com.yao.orderprovider.repository")
 @EntityScan(basePackages = "com.example.demo.entity")
 //没有此注解的话该jar包中的@component@configuration都不会生效
-@ComponentScan(basePackages = "com.example.demo")
+@ComponentScan(basePackages = {"com.example.demo","com.yao.orderprovider"})
 public class OrderProviderApplication {
 
     public static void main(String[] args) {

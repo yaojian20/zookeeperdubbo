@@ -18,6 +18,7 @@ import java.math.BigDecimal;
  * @author
  */
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @DubboReference(version = "1.1",group = "user-center")
@@ -28,7 +29,6 @@ public class UserServiceImpl implements UserService {
     private OrderService orderService;
 
     @Override
-    @Transactional()
     public void test() {
         User user = new User();
         user.setTotalMoney(new BigDecimal(10000));
@@ -42,7 +42,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(value = "financeCore")
     public void shop() {
         String userId  = "925789002986946560";
         BigDecimal totalMoney = new BigDecimal(100);
@@ -54,7 +53,7 @@ public class UserServiceImpl implements UserService {
         order.setGoodsName(goodName);
         order.setTotalMoney(totalMoney);
         order.setUserId(userId);
-        int a = 1/0;
+        //int a = 1/0;
         orderService.addOrder(order);
     }
 }

@@ -1,6 +1,5 @@
-package com.yao.usercenter.config;
+package com.yao.user.config;
 
-import com.atomikos.icatch.jta.UserTransactionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,8 +17,9 @@ public class TransactionManagerConfig {
     //@Autowired
     private AtomikosJtaConfiguration jtaConfiguration;
 
-    //@Bean(name = "financeCore")
+   //@Bean(name = "financeCore")
     public PlatformTransactionManager platformTransactionManager()  throws Throwable {
+        System.out.println("init PlatformTransactionManager======================================");
         return new JtaTransactionManager(jtaConfiguration.userTransaction(), jtaConfiguration.a());
     }
 

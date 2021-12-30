@@ -6,6 +6,7 @@ import com.yao.orderprovider.repository.OrderRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by yaojian on 2021/12/29 10:02
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Slf4j
 @DubboService(version = "1.0",group = "order-provider")
+@Transactional(value = "financeCore")
 public class OrderServiceImpl implements OrderService {
 
     @Autowired

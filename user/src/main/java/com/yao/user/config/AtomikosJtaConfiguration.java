@@ -1,4 +1,4 @@
-package com.yao.usercenter.config;
+package com.yao.user.config;
 
 import com.atomikos.icatch.jta.UserTransactionImp;
 import com.atomikos.icatch.jta.UserTransactionManager;
